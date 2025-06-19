@@ -90,12 +90,30 @@ function registrarSalida() {
     });
 }
 
-function verDiaMasOcupado() {
-  fetch("http://localhost:5001/estadisticas/dia-mas-ocupado")
-    .then((res) => res.json())
-    .then((data) => {
-      alert(`Día más ocupado: ${data.dia} con ${data.total} ingresos`);
+async function verDiaMasOcupado() {
+  const response = await fetch(
+    "http://localhost:5001/estadisticas/dia-mas-ocupado",
+  );
+
+  const data = await response.json();
+  if (!data || !data.dia) {
+    Swal.fire({
+      icon: "info",
+      title: "Información",
+      text: "No hay datos disponibles para mostrar.",
     });
+    return;
+  }
+  const div = document.getElementById("ver-mas-ocupado");
+  div.innerHTML = `
+      <div class="card border-primary mb-3">
+        <div class="card-body">
+          <h3 class="card-title">El día más ocupado fue:</h3>
+          <p class="card-text fw-bold">${data.dia}</p>
+          <p class="card-text">Total de ingresos: <span class="badge bg-success">${data.total}</span></p>
+        </div>
+      </div>
+    `;
 }
 
 function verPromedio() {
