@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -157,4 +157,130 @@ input {
         margin-bottom: 2rem;
         padding-bottom: 2rem;
     }
-} 
+}  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: linear-gradient(45deg, #2196F3, #3F51B5);
+    border-bottom: none;
+    text-align: center;
+}
+
+.card-header h1 {
+    color: white !important;
+    margin: 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.form-floating {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    border: none;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #f44336, #e53935);
+    border: none;
+}
+
+.btn-info {
+    background: linear-gradient(45deg, #00BCD4, #03A9F4);
+    border: none;
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #FFC107, #FFA000);
+    border: none;
+    color: white;
+}
+
+.fas {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .fas {
+    transform: scale(1.2);
+}
+
+#grafico {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .border-end {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+}
